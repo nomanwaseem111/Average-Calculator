@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Assigment 1</title>
+    <style>
+      *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+
+      body{
+        background-image: url('images/wooden-floor-1853417__340.webp');
+        background-position: center;
+        background-size: cover;
+      }
+     
+
+      label{
+        font-size: 26px;
+        font-weight: 700;
+        display: inline-block;
+        width: 100px;
+        
+       
+      }
+
+      .main{
+      
+       width: 600px;
+       margin: auto;
+       border: 5px solid black;
+       height: 580px;
+       padding: 10px 20px;
+      }
+
+      input{
+        width: 50%;
+    height: 10px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid black;
+    padding: 13px 10px;
+    margin-left: 40px;
+    font-size: 20px;
+    font-weight:800;
+    text-align: center;
+      }
+
+
+     button{
+      margin-top: 10px;
+    width: 30%;
+    height: 30px;
+    font-size: 20px;
+    border-radius: 20px;
+    border: 1px solid black;
+    background-color: black;
+    color: white;
+   
+    cursor: pointer;
+    text-transform: uppercase;
+    margin-top: 20px;
+    margin-left: 10px;
+     }
+
+     button:hover{
+      background: transparent;
+      color: black;
+      font-size: 16px;
+      font-weight: 700;
+
+
+     }
+
+     .heading{
+      text-align: center;
+     }
+
+     hr{
+      margin-bottom: 20px;
+     }
+    </style>
+</head>
+<body>
+  <div class="main">
+    <h1 class="heading">Average Calculator</h1>
+<hr>
+    <label>English:</label> <input type="number" name="number" id="eng"><br>
+    <label>Urdu:</label> <input type="number" name="number" id="urd"><br>
+    <label>Math:</label> <input type="number" name="number" id="mat"><br>
+    <label>Physics:</label> <input type="number" name="number" id="phy"><br>
+    <label>Science:</label> <input type="number" name="number" id="sci"><br>
+    <label>Accounting:</label> <input type="number" name="number" id="acc"><br>
+    <label>Chemistry:</label> <input type="number" name="number" id="cs"><br>
+    <label>Economics:</label> <input type="number" name="number" id="eco"><br>
+    <label>Pak.Studies:</label> <input type="number" name="number" id="pak"><br>
+    <label>Islamiat:</label> <input type="number" name="number" id="isl"><br>
+    <button onclick="total()">Total</button>
+    <button onclick="ave()">Average</button>
+    <button onclick="grade()">Grade</button><br>
+    <h1 id="res"></h1>
+    <h1 id="res2"></h1>  
+    <h1 id="res3"></h1>
+  </div>
+
+</body>
+
+
+<script>
+
+ function total(){
+  var a = parseInt(document.getElementById('eng').value)
+  var b = parseInt(document.getElementById('urd').value)
+  var c = parseInt(document.getElementById('mat').value)
+  var d = parseInt(document.getElementById('phy').value)
+  var e = parseInt(document.getElementById('sci').value)
+  var f = parseInt(document.getElementById('acc').value)
+  var g = parseInt(document.getElementById('cs').value)
+  var h = parseInt(document.getElementById('eco').value)
+  var i = parseInt(document.getElementById('pak').value)
+  var j = parseInt(document.getElementById('isl').value)
+
+  if(a > 100 || b > 100 || c > 100 || d > 100 || e > 100 || f > 100 || g > 100 || h > 100 || i > 100 || j > 100){
+    document.getElementById('res').innerHTML = "Please Enter Mark a Range of 100"
+  }else{
+    var sum = a + b + c + d + e + f + g + h + i + j
+    document.getElementById('res').innerHTML = sum;
+  }
+ }
+
+
+
+ function ave(){
+  var a = parseInt(document.getElementById('eng').value)
+  var b = parseInt(document.getElementById('urd').value)
+  var c = parseInt(document.getElementById('mat').value)
+  var d = parseInt(document.getElementById('phy').value)
+  var e = parseInt(document.getElementById('sci').value)
+  var f = parseInt(document.getElementById('acc').value)
+  var g = parseInt(document.getElementById('cs').value)
+  var h = parseInt(document.getElementById('eco').value)
+  var i = parseInt(document.getElementById('pak').value)
+  var j = parseInt(document.getElementById('isl').value)
+
+  if(a > 100 || b > 100 || c > 100 || d > 100 || e > 100 || f > 100 || g > 100 || h > 100 || i > 100 || j > 100){
+    document.getElementById('res').innerHTML = "Please Enter Mark a Range of 100"
+  }else{
+    var sum = a + b + c + d + e + f + g + h + i + j
+    var average = Math.round(sum  / 1000 * 100)
+    document.getElementById('res2').innerHTML = average + "%";
+  }
+ }
+
+
+
+ function grade(){
+  var a = parseInt(document.getElementById('eng').value)
+  var b = parseInt(document.getElementById('urd').value)
+  var c = parseInt(document.getElementById('mat').value)
+  var d = parseInt(document.getElementById('phy').value)
+  var e = parseInt(document.getElementById('sci').value)
+  var f = parseInt(document.getElementById('acc').value)
+  var g = parseInt(document.getElementById('cs').value)
+  var h = parseInt(document.getElementById('eco').value)
+  var i = parseInt(document.getElementById('pak').value)
+  var j = parseInt(document.getElementById('isl').value)
+
+  if(a > 100 || b > 100 || c > 100 || d > 100 || e > 100 || f > 100 || g > 100 || h > 100 || i > 100 || j > 100){
+    document.getElementById('res').innerHTML = "Please Enter Mark a Range of 100"
+  }else{
+    var sum = a + b + c + d + e
+    var average = Math.round(sum  / 500 * 100)
+     
+     if(average >= 80 && average <= 100){
+      document.getElementById('res3').innerHTML="Your Grade is A+";
+     }
+     else  if(average >= 70 && average < 80){
+      document.getElementById('res3').innerHTML="Your Grade is A";
+     } 
+     else  if(average >= 60 && average < 70){
+      document.getElementById('res3').innerHTML="Your Grade is B";
+     } 
+     else  if(average >= 50 && average < 60){
+      document.getElementById('res3').innerHTML="Your Grade is C";
+     } 
+     else  if(average >= 40 && average < 50){
+      document.getElementById('res3').innerHTML="Your Grade is D";
+     } 
+     else  if(average >= 0 && average < 40){
+      document.getElementById('res3').innerHTML="Your Grade is F";
+     } 
+
+
+
+
+
+    }
+ }
+
+
+</script>
+
+
+
+
+</html>
